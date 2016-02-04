@@ -14,7 +14,7 @@
 
 
 
--Allow users to share inspirational quotes
+-Allow users to share inspirational quotes 
 -Multiple pages or exposes functionality through multiple components on a single page
 -A user can add a new quote through a form
 -the form should ask for the quote and author, which are both required
