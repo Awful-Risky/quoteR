@@ -8,7 +8,37 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 	<script type="text/javascript" src="script.js"></script>
 </head>
-<body ng-contoller="quotoller">
+<body ng-controller="quotroller">
+
+		<form ng-submit="quoteCheck(quote, author)">
+			<input ng-model="quote" placeholder="Quote">
+			<input ng-model="author" placeholder="Author">
+			<input type="submit">
+		</form>
+
+		<ul>
+			<li ng-repeat="obj in quoteList">{{obj.quote}} <button>Click for all {{obj.author}}'s Quotes</button><button ng-click="removeQuote(obj)">Delete Quote</button></li>
+		</ul>
+
+		
+		<div>
+		  <form> <!-- ng-submit="push rating to obj in quoteList()" -->
+		  	<h6>Click on radio button to rate this Quote. 5 is the best rating: </h36>
+		    <input id="star-5" type="radio" name="star"/>
+		    <label>1</label>
+		    <input id="star-4" type="radio" name="star"/>
+		    <label>2</label>
+		    <input id="star-3" type="radio" name="star"/>
+		    <label>3</label>
+		    <input id="star-2" type="radio" name="star"/>
+		    <label>4</label>
+		    <input id="star-1" type="radio" name="star"/>
+		    <label>5</label>
+		    <input type="submit">
+		  </form>
+		</div>
+
+
 
 </body>
 </html>
