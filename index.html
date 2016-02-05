@@ -19,13 +19,14 @@
 	<ul>
 		<li ng-repeat="obj in quoteList">{{obj.quote}} <button>Click for all {{obj.author}}'s Quotes</button><button ng-click="removeQuote(obj)">Delete Quote</button>
 				
-			<form> <!-- ng-submit="push rating to obj in quoteList()" -->
+			<form ng-submit="rateMate(obj, rating)">
 				<h5>Click on radio button to rate this Quote. 5 is the best rating: </h5>
-				   <input type="radio"/><label> 1 </label>		    
+<!-- 				   <input type="radio"/><label> 1 </label>		    
 				   <input type="radio"/><label> 2 </label>		    
 				   <input type="radio"/><label> 3 </label>		    
 				   <input type="radio"/><label> 4 </label>		    
-				   <input type="radio"/><label> 5 </label>		    
+				   <input type="radio"/><label> 5 </label>	 -->	    
+				   <input ng-model="rating" placeholder="rating">
 				   <input type="submit">
 			</form>
 		</li>

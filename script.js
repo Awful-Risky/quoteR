@@ -17,10 +17,10 @@ angular.module('quoteR', []);
 angular.module('quoteR').factory('quoteFactory', [function(){
 	
 
-	var Quote = function(quote, author) {
+	var Quote = function(quote, author, rating) {
 		this.quote = quote;
 		this.author = author;
-		// this.rating = rating || 1;
+		this.rating = rating || 1;
 	}
 
 	var quoteList = [];
@@ -48,6 +48,12 @@ angular.module('quoteR').controller('quotroller', ['$scope', 'quoteFactory', fun
 		else {
 			alert('Please Complete the form to Submit your Quote')
 		}
+	}
+
+	$scope.rateMate = function(obj, rating) {
+		console.log(obj.rating);
+		obj.rating = rating;
+		console.log(obj.rating);
 	}
 
 	$scope.removeQuote = function(obj) {
